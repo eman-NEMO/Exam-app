@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Key Features
 
-## Getting Started
+User Registration: Secure user registration where users can sign up with their email, username, and password.
 
-First, run the development server:
+User Login: Users can log in using their credentials
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Password Reset: If users forget their password, they can easily reset it using a password reset link sent to their registered email.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Email/Phone Verification: Upon registration, users receive a verification code to confirm their email/phone number for added security.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Take Exam: Users can take exams directly on the platform, where they can answer multiple-choice or open-ended questions.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Dashboard: A personalized dashboard to view exam results, manage account settings, and access other platform features.
 
-## Learn More
+Admin Dashboard: Admin users can Add subject or diploma
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Next Js , Next Auth , ReactQuery ,zod , ReactHookForm , ShadCn
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+pending....
+After completion
