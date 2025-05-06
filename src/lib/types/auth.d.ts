@@ -17,3 +17,9 @@ declare type LoginResponse ={
     token:string;
     user:ApplicationUser
 }
+
+declare type RegisterResponse={
+    token: string;
+    user:ApplicationUser
+
+}
