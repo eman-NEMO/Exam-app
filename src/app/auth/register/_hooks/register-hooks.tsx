@@ -3,7 +3,6 @@ import { useMutation } from "@tanstack/react-query";
 import { Register } from "../_action/register-action";
 import { RegisterInputs } from "@/lib/schemes/auth-schemes";
 import { toast } from "sonner";
-import { useRouter } from "next/router";
 
 export default function useRegister() {
   const handleSuccess = () => {
@@ -14,6 +13,7 @@ export default function useRegister() {
   };
   const handleError = (error: Error) => {
     toast.error(error.message);
+    console.log(error.message);
   };
 
   const { isPending, error, mutate } = useMutation({

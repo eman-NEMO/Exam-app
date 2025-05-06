@@ -27,15 +27,19 @@ export default function RegisterForm() {
   const form = useForm<RegisterInputs>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
+      username: "",
       firstName: "",
       lastName: "",
       email: "",
       password: "",
-      confirmPassword: "",
+      rePassword: "",
+      phone: "",
     },
   });
 
   const onSubmit = async (values: RegisterInputs) => {
+    console.log(values);
+    console.log(`${process.env.API}/auth/signup`);
     register(values);
   };
   return (
@@ -45,13 +49,33 @@ export default function RegisterForm() {
           <form className="space-y-9" onSubmit={form.handleSubmit(onSubmit)}>
             <FormField
               control={form.control}
+              name="username"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      type="text"
+                      placeholder="Enter your username"
+                      id="username"
+                      className="h-12"
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
               name="firstName"
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
                     <Input
                       {...field}
-                      type="firstName"
+                      type="text"
                       placeholder="Enter your firstName"
                       id="firstName"
                       className="h-12"
@@ -71,7 +95,7 @@ export default function RegisterForm() {
                   <FormControl>
                     <Input
                       {...field}
-                      type="lastName"
+                      type="text"
                       placeholder="Enter your lastName"
                       id="lastName"
                       className="h-12"
@@ -125,7 +149,7 @@ export default function RegisterForm() {
             />
             <FormField
               control={form.control}
-              name="confirmPassword"
+              name="rePassword"
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
@@ -133,7 +157,26 @@ export default function RegisterForm() {
                       {...field}
                       type="Password"
                       placeholder="Enter your confirmPassword"
-                      id="confirmPassword"
+                      id="rePassword"
+                      className="h-12"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      type="number"
+                      placeholder="Enter your phone"
+                      id="phone"
                       className="h-12"
                     />
                   </FormControl>

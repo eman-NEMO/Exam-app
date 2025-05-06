@@ -18,6 +18,10 @@ const passwordValidation = new RegExp(
   );
   // password schema
 export const RegisterSchema = z.object({
+    username:z.string({required_error:"First Name is required"})
+    .min(1,"please Enter valid Name ")
+    .max(10, "Max string len 10 chars"),
+
     firstName:z.string({required_error:"First Name is required"})
     .min(1,"please Enter valid Name ")
     .max(10, "Max string len 10 chars"),
@@ -34,9 +38,12 @@ export const RegisterSchema = z.object({
     .max(20, "Password is too long")
     .regex(passwordValidation,"Not valid password"),
 
-    confirmPassword:z.string({required_error:"Password is required"})
+    rePassword:z.string({required_error:"Password is required"}),
 
-}).refine((data) => data.password === data.confirmPassword, {
+    phone:z.string({required_error:"phone is required"})
+    .regex(/^01[0125][0-9]{8}$/,"Not match regex")
+
+}).refine((data) => data.password === data.rePassword, {
     message: "Passwords don't match",
     path: ["confirmPassword"],// where error appear 
 });
